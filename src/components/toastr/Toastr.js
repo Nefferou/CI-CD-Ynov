@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './Toastr.css';
 
-const Toastr = ({ message, duration = 3000 }) => {
+const Toastr = ({message, duration = 3000}) => {
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {

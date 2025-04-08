@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { validateForm } from '../../utils/validation';
+import React, {useState, useEffect} from 'react';
+import {validateForm} from '../../utils/validation';
 import Toastr from '../toastr/Toastr';
 
-const RegistrationForm = ({ addUser }) => {
+const RegistrationForm = ({addUser}) => {
     const [form, setForm] = useState({
         name: '',
         surname: '',
@@ -23,8 +23,8 @@ const RegistrationForm = ({ addUser }) => {
     }, [form]);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        const {name, value} = e.target;
+        setForm({...form, [name]: value});
     };
 
     const handleSubmit = (e) => {
@@ -33,7 +33,7 @@ const RegistrationForm = ({ addUser }) => {
         if (isFormValid) {
             addUser(form);
             setSuccessful(true);
-            setForm({ name: '', surname: '', email: '', birthdate: '', city: '', postalCode: '' });
+            setForm({name: '', surname: '', email: '', birthdate: '', city: '', postalCode: ''});
             setHasSubmitted(false);
         } else {
             setSuccessful(false);
@@ -47,7 +47,7 @@ const RegistrationForm = ({ addUser }) => {
             <h2>Formulaire d'inscription</h2>
             {successful && <Toastr message="Registration successful!"/>}
             {hasSubmitted && !isFormValid && (
-                <Toastr type="error" message="Formulaire invalide. Veuillez corriger les erreurs." />
+                <Toastr type="error" message="Formulaire invalide. Veuillez corriger les erreurs."/>
             )}
             <form onSubmit={handleSubmit}>
                 {['name', 'surname', 'email', 'birthdate', 'city', 'postalCode'].map((field) => (
@@ -60,7 +60,7 @@ const RegistrationForm = ({ addUser }) => {
                             value={form[field]}
                             onChange={handleChange}
                         />
-                        {hasSubmitted  && errors[field] && <span style={{ color: 'red' }}>{errors[field]}</span>}
+                        {hasSubmitted && errors[field] && <span style={{color: 'red'}}>{errors[field]}</span>}
                     </div>
                 ))}
                 <button type="submit" disabled={!allFieldsFilled}>Sauvegarder</button>

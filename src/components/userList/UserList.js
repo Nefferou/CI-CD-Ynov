@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserList = ({ users }) => {
+const UserList = ({users}) => {
     return (
         <div>
             <h2>Liste des inscrits</h2>

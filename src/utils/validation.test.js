@@ -1,4 +1,4 @@
-import { isValidName, isValidEmail, isValidPostalCode, isValidBirthdate, validateForm } from './validation';
+import {isValidName, isValidEmail, isValidPostalCode, isValidBirthdate, validateForm} from './validation';
 
 test('validates names with accents, hyphens and apostrophes', () => {
     expect(isValidName("Élise")).toBe(true);

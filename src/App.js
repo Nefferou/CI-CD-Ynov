@@ -18,8 +18,8 @@ function App() {
 
     return (
         <div>
-            <RegistrationForm addUser={addUser} />
-            <UserList users={users} />
+            <RegistrationForm addUser={addUser}/>
+            <UserList users={users}/>
         </div>
     );
 }
