@@ -1,13 +1,32 @@
+/* Toastr message (notification centrale) */
 .toastr {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-size: 1rem;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+/* Animation fade-in/fade-out */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    10%, 90% {
+        opacity: 0.95;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
 }
