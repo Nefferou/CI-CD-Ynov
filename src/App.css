@@ -1,8 +1,89 @@
 .App {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
-    min-height: 100vh;
+    max-width: 800px;
+    margin: 2rem auto;
     padding: 2rem;
-    color: #102a43;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Titres */
+.App h2 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* Formulaire */
+.App form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.App form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.App label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+    text-transform: capitalize;
+}
+
+.App input {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.App input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Bouton */
+.App button[type="submit"] {
+    margin-top: 1rem;
+    align-self: center;
+    padding: 0.7rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.App button[type="submit"]:hover:enabled {
+    background-color: #2563eb;
+}
+
+.App button[type="submit"]:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Liste des inscrits */
+.App ul {
+    list-style: none;
+    padding: 0;
+}
+
+.App li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: #f9fafb;
+    border-radius: 6px;
+    color: #111827;
+    border: 1px solid #e5e7eb;
 }

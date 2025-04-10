@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import RegistrationForm from './components/registrationForm/RegistrationForm';
 import UserList from './components/userList/UserList';
+import './App.css';
 
 function App() {
     const [users, setUsers] = useState([]);
@@ -17,7 +18,7 @@ function App() {
     }, []);
 
     return (
-        <div>
+        <div className="App">
             <RegistrationForm addUser={addUser}/>
             <UserList users={users}/>
         </div>
