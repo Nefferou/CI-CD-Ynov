@@ -46,8 +46,8 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: build and publish package on NPM
         run: |
-          git config --global user.email "loise.fenoll@ynov.com"
-          git config --global user.name "Loise Fenoll"
+          git config --global user.email "fertijulien@gmail.com"
+          git config --global user.name "Julien Frtlt"
           npm run build-npm
           npm version patch
           npm publish
