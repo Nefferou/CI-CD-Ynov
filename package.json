@@ -1,7 +1,7 @@
 {
-  "name": "ci-cd-ynov",
+  "name": "ci-cd-ynov-julien-fertilati",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,10 +13,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll=false",
+    "test": "react-scripts test --coverage --collectCoverageFrom=src/*js --collectCoverageFrom=!src/reportWebVitals.js --collectCoverageFrom=!src/index.js --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "jsdoc": "jsdoc -R ./README.md -c ./jsdoc.config.json -r -d ./public/docs",
+    "build-npm": "set NODE_ENV=production rimraf dist && mkdir dist && npx babelsrc --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -37,9 +39,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "gh-pages": "^6.3.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jsdoc": "^4.0.4",
+    "rimraf": "^6.0.1"
   }
 }
